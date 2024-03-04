@@ -177,7 +177,7 @@ if(CPR_USE_SYSTEM_CURL)
         if(CURL_FOUND)
             message(STATUS "Curl ${CURL_VERSION_STRING} found on this system.")
             # To be able to load certificates under Windows when using OpenSSL:
-            if(CMAKE_USE_OPENSSL AND WIN32 AND (NOT (CURL_VERSION_STRING VERSION_GREATER_EQUAL "7.71.0")))
+            if(CURL_USE_OPENSSL AND WIN32 AND (NOT (CURL_VERSION_STRING VERSION_GREATER_EQUAL "7.71.0")))
                 message(FATAL_ERROR "Your system curl version (${CURL_VERSION_STRING}) is too old to support OpenSSL on Windows which requires curl >= 7.71.0. Update your curl version, use WinSSL, disable SSL or use the built-in version of curl.")
             endif()
         else()
